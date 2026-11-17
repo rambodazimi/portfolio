@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {
   profile,
   experience,
+  startupExperience,
   skills,
   writing,
   getSocial,
@@ -97,10 +98,28 @@ const AboutPage = () => {
             </div>
           </section>
 
-          {/* Skills Section */}
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
               <span className={styles.sectionNumber}>03</span>
+              <h2 className={styles.sectionTitle}>Startup Experience</h2>
+            </div>
+            <div className={styles.sectionBody}>
+              {startupExperience.map(exp => (
+                <div key={exp.company} className={styles.experienceCard}>
+                  <h3 className={styles.expRole}>{exp.role}</h3>
+                  <p className={styles.expCompany}>{exp.company}</p>
+                  <ul className={styles.expList}>
+                    {exp.highlights?.map(item => <li key={item}>{item}</li>)}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Skills Section */}
+          <section className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <span className={styles.sectionNumber}>04</span>
               <h2 className={styles.sectionTitle}>Skills</h2>
             </div>
             
@@ -125,7 +144,7 @@ const AboutPage = () => {
           {/* Writing Section */}
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
-              <span className={styles.sectionNumber}>04</span>
+              <span className={styles.sectionNumber}>05</span>
               <h2 className={styles.sectionTitle}>Research</h2>
             </div>
             
@@ -154,7 +173,7 @@ const AboutPage = () => {
           {/* Beyond Code Section */}
           <section className={styles.section}>
             <div className={styles.sectionHeader}>
-              <span className={styles.sectionNumber}>05</span>
+              <span className={styles.sectionNumber}>06</span>
               <h2 className={styles.sectionTitle}>Education & Mentoring</h2>
             </div>
             

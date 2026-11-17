@@ -7,10 +7,12 @@ import {
   VscFiles,
   VscMail,
   VscSettings,
+  VscDatabase,
+  VscCloud,
 } from 'react-icons/vsc';
 import {
-  SiPython, SiPytorch, SiTensorflow, SiHuggingface, SiScikitlearn,
-  SiCplusplus, SiPostgresql, SiFlask, SiDocker, SiGit, SiLinux,
+  SiPython, SiPytorch, SiHuggingface,
+  SiDocker, SiGit, SiFlask,
 } from 'react-icons/si';
 
 import { Project } from '@/types';
@@ -34,7 +36,7 @@ export const profile = {
   bio: [
     'I’m an AI/ML researcher and software developer based in Montréal, and an AI Data Engineer at SoftSim. I graduated from McGill University with a Bachelor of Software Engineering in 2024.',
     'My research spans efficient language models and computer vision. I explore knowledge distillation, parameter-efficient fine-tuning, and generative models, with research experience at Quantiphi, Mila, McGill, and the National Research Council Canada.',
-    'I enjoy connecting experiments to working software, including AI agents, retrieval-augmented generation, backend services, and automation.',
+    'I build LLM-powered applications with agentic workflows, retrieval-augmented generation, and scalable backend infrastructure. My work includes AI services at QSnxt, the ScholaRef research platform, and 41Prompts.',
   ],
   beyondCode: 'Bachelor of Software Engineering, McGill University · 2020–2024 · CGPA: 3.67/4. Academic tutor in mathematics and programming, and recipient of McGill’s 2023 Tomlinson Engagement Award for Mentoring.',
 };
@@ -66,13 +68,69 @@ export interface Experience {
 
 export const experience: Experience[] = [
   { role: 'AI Data Engineer', company: 'SoftSim Technologies', period: 'Present' },
-  { role: 'Research Engineer Intern', company: 'Quantiphi', period: 'February–July 2025', description: 'Worked on knowledge distillation and generative models for efficient inference, data generation, and domain adaptation.' },
-  { role: 'Research Assistant · Machine Learning', company: 'National Research Council Canada × McGill University', period: 'October 2024–August 2025', description: 'Studied fabrication variability in photonic devices using generative models and uncertainty estimation.' },
-  { role: 'Collaborating Researcher', company: 'Mila – Quebec AI Institute', period: 'April–December 2024', description: 'Investigated efficient language-model adaptation, including LoRA and knowledge distillation, and worked on AI agents for simulator evaluation.' },
+  {
+    role: 'AI Software Developer', company: 'QSnxt', period: 'October 2025–October 2026',
+    highlights: [
+      'Designed and deployed a RAG pipeline with MongoDB ingestion, multimodal preprocessing, and query orchestration using Ollama LLM/VLM models.',
+      'Developed Flask APIs for text-to-speech, speech-to-text, translation, and expense analysis.',
+    ],
+  },
+  {
+    role: 'Machine Learning Researcher', company: 'National Research Council Canada × McGill University', period: 'October 2024–October 2025',
+    highlights: [
+      'Optimized image-based neural networks for uncertainty reduction and model calibration.',
+      'Used GANs, VAEs, diffusion models, and U-Net variants to simulate uncertainty in photonic device fabrication.',
+    ],
+  },
+  {
+    role: 'Research Engineer Intern', company: 'Quantiphi Analytics', period: 'February–July 2025',
+    highlights: [
+      'Built an LLM distillation pipeline supporting SeqKD, multitask learning, and ORPO, with distributed training and experiment tracking.',
+      'Integrated rationale-augmented datasets through preprocessing workflows using Kubeflow and BigQuery.',
+    ],
+  },
+  {
+    role: 'Machine Learning Researcher', company: 'Mila – Quebec AI Institute', period: 'April–December 2024',
+    highlights: [
+      'Built an agentic AI system to evaluate excavator operator performance and answer documentation-based queries.',
+      'Implemented parameter-efficient LLM fine-tuning and knowledge distillation methods.',
+    ],
+  },
   { role: 'Research Assistant', company: 'McGill University', period: 'January–October 2024', description: 'Applied segmentation networks and model ensembles to photonic fabrication prediction.' },
   { role: 'Research Assistant', company: 'McGill University', period: 'May–August 2024', description: 'Explored real-time object tracking and mapping for dashcam scene understanding.' },
-  { role: 'Information Technology Intern', company: 'Walter Surface Technologies', period: 'May–August 2023', description: 'Developed automation tools for document recognition, barcodes, and OCR.' },
-  { role: 'Network Engineer Intern', company: 'Ericsson', period: 'May–August 2022', description: 'Supported RF network quality through data validation and analysis.' },
+  {
+    role: 'Information Technology Intern', company: 'Walter Surface Technologies', period: 'May–August 2023',
+    highlights: [
+      'Developed an AI-powered invoice processing system with Python and Azure to streamline order management.',
+      'Built data pipelines integrating SQL, BigQuery, and Azure Data Lake.',
+    ],
+  },
+  {
+    role: 'Network Engineer Intern', company: 'Ericsson', period: 'May–August 2022',
+    highlights: [
+      'Collaborated on disaster planning, CIQ and intake validation, and automation tools.',
+      'Automated network data handling with Python and Bash.',
+    ],
+  },
+];
+
+export const startupExperience: Experience[] = [
+  {
+    role: 'Founding Engineer', company: 'ScholaRef', period: 'Startup experience',
+    highlights: [
+      'Architected an academic research platform with more than 20 specialized AI agents.',
+      'Built Flask APIs and MongoDB RAG pipelines supporting millions of documents, with local Ollama models and Celery task processing.',
+      'Developed multi-reviewer simulation, OpenAlex/Crossref paper retrieval, structured reports, and Stripe integration.',
+    ],
+  },
+  {
+    role: 'Co-Founder & CTO', company: '41Prompts', period: 'Startup experience',
+    highlights: [
+      'Launched a browser-based AI prompt optimization assistant with real-time suggestions.',
+      'Built a modular architecture for LLM backends, prompt chaining, and testing workflows.',
+      'Deployed cloud services with scalable APIs, caching, and Docker pipelines.',
+    ],
+  },
 ];
 
 // Your skills, shown as installed extensions in the Extensions view. Each one
@@ -93,19 +151,32 @@ export interface Extension {
   experience?: string;
 }
 
-export const extensions: Extension[] = [
-  { id: 'python', name: 'Python', publisher: 'Python Software Foundation', category: 'Languages', icon: SiPython, color: '#3776ab', description: 'Research experiments, machine learning pipelines, and backend automation.' },
-  { id: 'cpp', name: 'C / C++', publisher: 'ISO', category: 'Languages', icon: SiCplusplus, color: '#659ad2', description: 'Systems programming, memory management, and performance-oriented development.' },
-  { id: 'pytorch', name: 'PyTorch', publisher: 'PyTorch Foundation', category: 'Machine Learning', icon: SiPytorch, color: '#ee4c2c', description: 'Deep learning experiments, model training, and knowledge distillation.' },
-  { id: 'tensorflow', name: 'TensorFlow', publisher: 'Google', category: 'Machine Learning', icon: SiTensorflow, color: '#ff6f00', description: 'Neural networks and computer vision models.' },
-  { id: 'transformers', name: 'Transformers', publisher: 'Hugging Face', category: 'Machine Learning', icon: SiHuggingface, color: '#ffd21e', description: 'Language models, LoRA fine-tuning, and model sharing.', details: 'My KD-LoRA work combines low-rank adaptation with knowledge distillation. My Hugging Face profile hosts fine-tuned models for NLP benchmarks.' },
-  { id: 'scikit-learn', name: 'scikit-learn', publisher: 'scikit-learn', category: 'Machine Learning', icon: SiScikitlearn, color: '#f7931e', description: 'Classical machine learning, evaluation, and data analysis.' },
-  { id: 'postgresql', name: 'SQL / PostgreSQL', publisher: 'PostgreSQL', category: 'Backend & Data', icon: SiPostgresql, color: '#4169e1', description: 'Relational data modeling and database-backed applications.' },
-  { id: 'flask', name: 'Flask', publisher: 'Pallets', category: 'Backend & Data', icon: SiFlask, color: '#ffffff', description: 'Python APIs and web services for software projects.' },
-  { id: 'docker', name: 'Docker', publisher: 'Docker', category: 'Tools', icon: SiDocker, color: '#2496ed', description: 'Reproducible environments and containerized applications.' },
-  { id: 'git', name: 'Git', publisher: 'Software Freedom Conservancy', category: 'Tools', icon: SiGit, color: '#f05032', description: 'Version control for research code and collaborative software development.' },
-  { id: 'linux', name: 'Linux', publisher: 'Linux community', category: 'Tools', icon: SiLinux, color: '#fcc624', description: 'Development environments, shell scripting, and systems tooling.' },
+// Skills from Rambod's May 2026 résumé. Each is also an explorable editor extension.
+const skillGroups: { category: string; icon: IconType; color: string; names: string[]; description: string }[] = [
+  { category: 'Programming', icon: SiPython, color: '#3776ab', names: ['Python', 'SQL', 'Java', 'C/C++', 'Bash', 'JavaScript', 'HTML/CSS'], description: 'Programming languages used across software engineering, automation, and research.' },
+  { category: 'AI & LLM Engineering', icon: SiHuggingface, color: '#ffd21e', names: ['PyTorch', 'TensorFlow', 'Transformers', 'PEFT', 'RAG', 'Prompt Engineering', 'Agentic Workflows'], description: 'Building intelligent applications with language models, retrieval, and efficient adaptation.' },
+  { category: 'Data & ML', icon: SiPytorch, color: '#ee4c2c', names: ['Scikit-learn', 'Pandas', 'NumPy', 'OpenCV', 'VAEs', 'GANs', 'Feature Engineering', 'Model Evaluation'], description: 'Data preparation, generative modeling, computer vision, and experimental evaluation.' },
+  { category: 'LLMOps & MLOps', icon: SiDocker, color: '#2496ed', names: ['Docker', 'Kubernetes', 'MLflow', 'Weights & Biases', 'Airflow', 'Kubeflow', 'CI/CD Pipelines'], description: 'Reproducible training, workflow orchestration, experiment tracking, and deployment.' },
+  { category: 'Backend & Systems', icon: SiFlask, color: '#ffffff', names: ['Flask', 'FastAPI', 'Django', 'REST APIs', 'Microservices', 'Async Processing', 'System Design'], description: 'Designing APIs and backend systems for scalable AI-powered applications.' },
+  { category: 'Cloud & Infrastructure', icon: VscCloud, color: '#58a6ff', names: ['AWS', 'GCP', 'BigQuery', 'PostgreSQL', 'Data Pipelines', 'Distributed Systems'], description: 'Cloud infrastructure and data systems for production and research workloads.' },
+  { category: 'Tools & DevOps', icon: SiGit, color: '#f05032', names: ['Git', 'GitLab', 'Bitbucket', 'Linux/Unix', 'Postman', 'Pytest', 'Selenium', 'Jira'], description: 'Version control, testing, development environments, and team collaboration.' },
+  { category: 'Applied at Work', icon: VscDatabase, color: '#47a248', names: ['MongoDB', 'Ollama', 'Celery', 'Microsoft Azure', 'Azure Data Lake'], description: 'Technologies applied in RAG systems, asynchronous AI services, and data pipelines.' },
 ];
+
+const skillIds: Record<string, string> = { 'C/C++': 'cpp', 'HTML/CSS': 'html-css', 'Linux/Unix': 'linux' };
+
+export const extensions: Extension[] = skillGroups.flatMap(group =>
+  group.names.map(name => ({
+    id: skillIds[name] ?? name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, ''),
+    name,
+    publisher: 'Rambod Azimi',
+    category: group.category,
+    icon: group.icon,
+    color: group.color,
+    description: group.description,
+    details: `${name} is part of my ${group.category.toLowerCase()} toolkit. ${group.description}`,
+  }))
+);
 
 export const getExtension = (id: string) => extensions.find(e => e.id === id);
 

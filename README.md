@@ -33,7 +33,7 @@ For root-domain hosting, leave `NEXT_PUBLIC_BASE_PATH` empty and update `profile
 
 ## Content sources
 
-Public professional information was checked on November 17, 2026. The current SoftSim role was confirmed directly by Rambod. Past roles and education come from his [existing website](https://rambodazimi.github.io/experience/); projects come from his [GitHub profile](https://github.com/rambodazimi), and model work from [Hugging Face](https://huggingface.co/rambodazimi).
+Public professional information was checked on November 17, 2026. The current SoftSim role was confirmed directly by Rambod. Work experience and skills were updated from Rambod’s May 2026 résumé, with QSnxt’s end date corrected to October 2026 per his instruction. Additional research roles and education come from his [existing website](https://rambodazimi.github.io/experience/); projects come from his [GitHub profile](https://github.com/rambodazimi), and model work from [Hugging Face](https://huggingface.co/rambodazimi).
 
 Publications link to their primary records:
 

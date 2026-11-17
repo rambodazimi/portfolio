@@ -2,7 +2,7 @@
 
 A VS Code themed portfolio for Rambod Azimi, AI Data Engineer at SoftSim and AI/ML researcher based in Montréal.
 
-**Website:** https://rambodazimi.github.io/vscode-portfolio/
+**Website:** https://rambodazimi.github.io/portfolio/
 
 ## Develop
 
@@ -26,7 +26,7 @@ GitHub Actions builds and deploys `main` to GitHub Pages using `.github/workflow
 The build exports static files to `out/`. To reproduce the Pages build:
 
 ```bash
-NEXT_PUBLIC_BASE_PATH=/vscode-portfolio npm run build
+NEXT_PUBLIC_BASE_PATH=/portfolio npm run build
 ```
 
 For root-domain hosting, leave `NEXT_PUBLIC_BASE_PATH` empty and update `profile.siteUrl`. No paid hosting or server secrets are needed.

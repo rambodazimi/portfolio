@@ -25,7 +25,7 @@ jobs:
       - run: node --experimental-strip-types --test tests/pathname.test.mjs
       - run: npm run build
         env:
-          NEXT_PUBLIC_BASE_PATH: /vscode-portfolio
+          NEXT_PUBLIC_BASE_PATH: /portfolio
       - uses: actions/upload-pages-artifact@v4
         with:
           path: out
